@@ -30,11 +30,16 @@ if(UNIX)
                     libopencv_videostab.so
                     libopencv_videoio.so)
 
+    set(spdlog_DIR "./deps/spdlog-output")
+    include_directories(${spdlog_DIR}/include/)
+    link_directories(${spdlog_DIR}/lib/)
+    set(spdlog_LIBS libspdlog.a)
+
 elseif(WIN32)
 
 endif()
 
-set(LIB_LIST ${OpenCV_LIBS})
+set(LIB_LIST ${OpenCV_LIBS} ${spdlog_LIBS})
 set(SRC_LIST main.cpp)
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
