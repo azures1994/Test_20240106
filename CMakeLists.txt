@@ -7,8 +7,38 @@ enable_testing()
 set(CMAKE_BUILD_TYPE "Debug")
 set(EXECUTABLE_OUTPUT_PATH "../bin/")
 
+if(UNIX)
 
-add_executable(test_20240105 main.cpp)
+    set(OpenCV_DIR "./deps/opencv-output/")
+    include_directories(${OpenCV_DIR}/include/)
+    link_directories(${OpenCV_DIR}/lib/)
+    set(OpenCV_LIBS libopencv_stitching.so
+                    libopencv_objdetect.so
+                    libopencv_superres.so
+                    libopencv_dnn.so
+                    libopencv_imgproc.so
+                    libopencv_shape.so
+                    libopencv_video.so
+                    libopencv_flann.so
+                    libopencv_calib3d.so
+                    libopencv_core.so
+                    libopencv_ml.so
+                    libopencv_photo.so
+                    libopencv_features2d.so
+                    libopencv_highgui.so
+                    libopencv_imgcodecs.so
+                    libopencv_videostab.so
+                    libopencv_videoio.so)
+
+elseif(WIN32)
+
+endif()
+
+set(LIB_LIST ${OpenCV_LIBS})
+set(SRC_LIST main.cpp)
+
+add_executable(${PROJECT_NAME} ${SRC_LIST})
+target_link_libraries(${PROJECT_NAME} ${LIB_LIST})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
