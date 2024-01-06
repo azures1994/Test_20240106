@@ -30,10 +30,13 @@ if(UNIX)
                     libopencv_videostab.so
                     libopencv_videoio.so)
 
-    set(spdlog_DIR "./deps/spdlog-output")
+    set(spdlog_DIR "./deps/spdlog-output/")
     include_directories(${spdlog_DIR}/include/)
     link_directories(${spdlog_DIR}/lib/)
     set(spdlog_LIBS libspdlog.a)
+
+    set(json_DIR "./deps/json-output/")
+    include_directories(${json_DIR}/include/)
 
 elseif(WIN32)
 
