@@ -2,3 +2,6 @@
 	path = deps/opencv
 	url = https://github.com/opencv/opencv.git
 	branch = 3.4
+[submodule "deps/spdlog"]
+	path = deps/spdlog
+	url = https://github.com/gabime/spdlog.git
