@@ -4,6 +4,10 @@
 #include <spdlog/spdlog.h>
 #include <nlohmann/json.hpp>
 #include <ncnn/net.h>
+#include <MNN/Interpreter.hpp>
+#include <MNN/MNNDefine.h>
+#include <MNN/Tensor.hpp>
+#include <MNN/ImageProcess.hpp>
 
 void test_opencv(){
     std::string srcImgPath{"./temp/image_001.jpg"};

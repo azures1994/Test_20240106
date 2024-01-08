@@ -43,11 +43,16 @@ if(UNIX)
     link_directories(${NCNN_DIR}/lib/)
     set(NCNN_LIBS libncnn.so)
 
+    set(MNN_DIR "./deps/MNN-output/")
+    include_directories(${MNN_DIR}/include/)
+    link_directories(${MNN_DIR}/lib/)
+    set(MNN_LIBS libMNN_Express.so libMNN.so)
+
 elseif(WIN32)
 
 endif()
 
-set(LIB_LIST ${OpenCV_LIBS} ${spdlog_LIBS} ${NCNN_LIBS})
+set(LIB_LIST ${OpenCV_LIBS} ${spdlog_LIBS} ${NCNN_LIBS} ${MNN_LIBS})
 set(SRC_LIST main.cpp)
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
