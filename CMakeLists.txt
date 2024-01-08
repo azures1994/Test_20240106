@@ -38,11 +38,16 @@ if(UNIX)
     set(json_DIR "./deps/json-output/")
     include_directories(${json_DIR}/include/)
 
+    set(NCNN_DIR "./deps/ncnn-output/")
+    include_directories(${NCNN_DIR}/include/)
+    link_directories(${NCNN_DIR}/lib/)
+    set(NCNN_LIBS libncnn.so)
+
 elseif(WIN32)
 
 endif()
 
-set(LIB_LIST ${OpenCV_LIBS} ${spdlog_LIBS})
+set(LIB_LIST ${OpenCV_LIBS} ${spdlog_LIBS} ${NCNN_LIBS})
 set(SRC_LIST main.cpp)
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})

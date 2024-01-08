@@ -3,6 +3,7 @@
 #include <opencv2/opencv.hpp>
 #include <spdlog/spdlog.h>
 #include <nlohmann/json.hpp>
+#include <ncnn/net.h>
 
 void test_opencv(){
     std::string srcImgPath{"./temp/image_001.jpg"};
@@ -90,12 +91,17 @@ void test_json(){
     std::cout << "j2: " << std::endl << j2 << std::endl;
 }
 
+void test_ncnn(){
+    ncnn::Net net;
+}
+
 int main(int, char**){
     std::cout << "Hello, from test_20240106!\n";
 
     // test_opencv();
     // test_spdlog();
-    test_json();
+    // test_json();
+    test_ncnn();
 
     return 0;
 }
