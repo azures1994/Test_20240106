@@ -11,3 +11,6 @@
 [submodule "deps/ncnn"]
 	path = deps/ncnn
 	url = http://192.168.10.7:3000/QLHua/ncnn.git
+[submodule "deps/MNN"]
+	path = deps/MNN
+	url = http://192.168.10.7:3000/QLHua/MNN.git
