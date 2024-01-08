@@ -8,3 +8,6 @@
 [submodule "deps/json"]
 	path = deps/json
 	url = https://github.com/nlohmann/json.git
+[submodule "deps/ncnn"]
+	path = deps/ncnn
+	url = http://192.168.10.7:3000/QLHua/ncnn.git
